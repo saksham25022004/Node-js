@@ -1,29 +1,65 @@
-.product-form{
-    width: 20rem;
-    max-width: 90%;
-    margin: auto;
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
-.form-control{
-    margin: 1rem;
+.card-product-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 300px;
 }
-.form-control label,
-.form-control input{
-    display: block;
+.card-product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card__header {
+    padding: 15px;
+    background-color: #f7f7f7;
+}
+.product__title {
+    font-size: 1.5em;
+    margin: 0;
+}
+.card__image img {
     width: 100%;
+    height: auto;
 }
-.form-control input{
-    border: 1px solid goldenrod;
-    border-radius: 2px;
+.card__content {
+    padding: 15px;
 }
-button{
-    border: 1px solid rgb(255, 196, 0);
-    color: rgb(255, 179, 0);
-    background: white;
-    border-radius: 3px;
-    cursor: pointer;
-    margin: 1rem;
+.product__price {
+    color: #e74c3c;
+    font-size: 1.25em;
+    margin: 0 0 10px;
 }
-button:hover{
-    background-color: blueviolet;
+.product__description {
+    font-size: 1em;
+    color: #333;
+    margin: 0;
+}
+.card__actions {
+    padding: 15px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+.btn {
+    background-color: #3498db;
+    border: none;
+    border-radius: 4px;
     color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: #2980b9;
 }

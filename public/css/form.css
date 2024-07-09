@@ -1,0 +1,31 @@
+.product-form{
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+}
+.form-control{
+    margin: 1rem;
+}
+.form-control label,
+.form-control input,
+.form-control textarea{
+    display: block;
+    width: 100%;
+}
+.form-control input,
+.form-control textarea{
+    border: 1px solid goldenrod;
+    border-radius: 2px;
+}
+button{
+    border: 1px solid rgb(255, 196, 0);
+    color: rgb(255, 179, 0);
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 1rem;
+}
+button:hover{
+    background-color: blueviolet;
+    color: white;
+}
