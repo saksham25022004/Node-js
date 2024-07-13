@@ -13,7 +13,7 @@ exports.postAddProduct=(req, res, next)=>{
     const imageUrl=req.body.imageUrl;
     const price=req.body.price;
     const description=req.body.description;
-    const product=new Product(title, price, description, imageUrl);
+    const product=new Product(title, price, description, imageUrl, null, req.user._id);
     product.save()
         .then(result=>{
             res.redirect('/admin/Products');
@@ -73,10 +73,7 @@ exports.getProducts=(req,res,next)=>{
 
 exports.postDeleteProduct=(req,res,next)=>{
     const prodId=req.body.productId;
-    Product.findById(prodId)
-        .then(product=>{
-            return product.destroy();
-        })
+    Product.deleteById(prodId)
         .then(result=>{
             res.redirect('/admin/products');
         })
