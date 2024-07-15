@@ -32,5 +32,21 @@ button:hover{
 .login-form{
     width: 20rem;
     max-width: 90%;
+    padding: 1rem;
     margin: auto;
+}
+.user-message{
+    margin:auto;
+    width: 20rem;
+    border:1px solid rgb(157, 0, 255);
+    background:rgb(187, 0, 255);
+    padding: 4px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.user-message--error{
+    border-color:red;
+    background-color: rgb(255,176,176);
+    color: red;
 }
