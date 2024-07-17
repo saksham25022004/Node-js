@@ -62,7 +62,6 @@ exports.postLogin = (req, res, next) => {
     const password=req.body.password;
     const errors=validationResult(req);
     if(!errors.isEmpty()){
-        console.log(errors.array());
         return res.status(422).render('auth/login', {
             path: '/login',
             pageTitle: 'login',
@@ -102,15 +101,17 @@ exports.postLogin = (req, res, next) => {
                 })
                 .catch(err=>res.redirect('/login'))
         })
-        .catch(err=>console.log(err))
-};
+        .catch(err=>{
+            const error=new Error(err);
+            error.httpStatuscode=500;
+            return next(error);
+        })};
 
 exports.postSignup = (req, res, next) => {
     const email=req.body.email;
     const password=req.body.password;
     const errors=validationResult(req);
     if(!errors.isEmpty()){
-        console.log(errors.array());
         return res.status(422).render('auth/signup', {
             path: '/signup',
             pageTitle: 'Signup',
@@ -139,9 +140,11 @@ exports.postSignup = (req, res, next) => {
                 html: '<h1>You successfully signed up!</h1>'
                 });
         })
-        .catch(err => {
-            console.log(err);
-            });
+        .catch(err=>{
+            const error=new Error(err);
+            error.httpStatuscode=500;
+            return next(error);
+        })
 };
 
 exports.postLogout = (req, res, next) => {
@@ -194,7 +197,9 @@ exports.postReset=(req,res,next)=>{
                   });
             })
             .catch(err=>{
-                console.log(err);
+                const error=new Error(err);
+                error.httpStatuscode=500;
+                return next(error);
             })
     })
 }
@@ -219,7 +224,9 @@ exports.getNewPassword=(req,res,next)=>{
             });
         })
         .catch(err=>{
-            console.log(err);
+            const error=new Error(err);
+            error.httpStatuscode=500;
+            return next(error);
         })
     
 }
@@ -248,6 +255,8 @@ exports.postNewPassword=(req,res,next)=>{
         res.redirect('/login');
     })
     .catch(err=>{
-        console.log(err);
+        const error=new Error(err);
+        error.httpStatuscode=500;
+        return next(error);
     })
 }
