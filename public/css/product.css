@@ -67,3 +67,10 @@
 .btn:hover {
     background-color: #2980b9;
 }
+.logoutbtn{
+    background-color: transparent;
+    border: hidden;
+    font-size: 15px;
+    color: rgba(255, 0, 0, 0.571);
+    cursor: pointer;
+}

@@ -50,3 +50,8 @@ button:hover{
     background-color: rgb(255,176,176);
     color: red;
 }
+
+.form-control input.invalid,
+.form-control text.invalid{
+    border-color: red;
+}
