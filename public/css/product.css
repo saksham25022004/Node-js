@@ -74,3 +74,20 @@
     color: rgba(255, 0, 0, 0.571);
     cursor: pointer;
 }
+.pagination{
+    text-align: center;
+    margin-top: 2rem;
+}
+.pagination a{
+    text-decoration: none;
+    color:rgba(0, 128, 0, 0.534);
+    padding: 0.5rem;
+    border: 1px solid rgba(0, 128, 0, 0.534);
+    margin: 0 1rem;
+}
+.pagination a:hover,
+.pagination a:active,
+.pagination a.active{
+    background-color: rgba(0, 128, 0, 0.534);
+    color: white;
+}
